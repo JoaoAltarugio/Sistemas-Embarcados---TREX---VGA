@@ -1,51 +1,84 @@
-# Sistemas-Embarcados---TREX---VGA
+# 🦖 Sistemas Embarcados — T-Rex VGA Game
 
-Chrome Dino Game (FPGA Version)
-Um clássico jogo de dinossauro para hardware FPGA.
+### Chrome Dino Game (Versão FPGA)  
+Um clássico jogo de dinossauro adaptado para hardware FPGA.
 
-Como Jogar
-Inicie o Jogo: Assim que o programa for carregado no seu FPGA, a tela de introdução aparecerá. Pressione a KEY1 no seu kit DE1-SoC (ou hardware equivalente) para começar a partida.
+---
 
-Pular: Para fazer o dinossauro pular e desviar dos obstáculos (cactos e pássaros), pressione a KEY0.
+## 🎮 Como Jogar
 
-Objetivo: Sobreviva o máximo que puder para conseguir a maior pontuação.
+- **Inicie o Jogo:**  
+  Após carregar o programa no FPGA, a tela de introdução aparecerá. Pressione a `KEY1` no kit DE1-SoC (ou hardware equivalente) para começar.
 
-Game Over: Se o dinossauro colidir com um obstáculo, o jogo termina. Pressione a KEY1 novamente para reiniciar.
+- **Pular:**  
+  Pressione `KEY0` para fazer o dinossauro pular e desviar de obstáculos (cactos e pássaros).
 
-Como Rodar o Código
-Este projeto é desenvolvido em C para ser executado em um sistema embarcado baseado em FPGA (especificamente, kits como o DE1-SoC ou similares que possuem um processador ARM e hardware de vídeo configurável).
+- **Objetivo:**  
+  Sobreviva o máximo possível para alcançar a maior pontuação.
 
-Pré-requisitos:
+- **Game Over:**  
+  Se o dinossauro colidir com um obstáculo, o jogo termina. Pressione `KEY1` para reiniciar.
 
-Kit FPGA: Um kit de desenvolvimento FPGA com um processador ARM (como o ARM Cortex-A9 no DE1-SoC) e periféricos de vídeo (buffer de pixels, buffer de caracteres).
+---
 
-Ambiente de Desenvolvimento:
+## 🛠️ Como Rodar o Código
 
-Intel Quartus Prime (ou equivalente para seu FPGA).
+Este projeto é escrito em **C** para sistemas embarcados baseados em **FPGA**, como o kit **DE1-SoC**, que integra um **processador ARM** e controladores de vídeo.
 
-Intel FPGA Monitor Program.
+### ✅ Pré-requisitos
 
-address_map_arm.h: Este arquivo (não incluído aqui, mas essencial para o projeto) deve conter as definições de endereço de memória para os periféricos do FPGA, como PIXEL_BUF_CTRL_BASE, RGB_RESAMPLER_BASE, KEY_BASE, e FPGA_CHAR_BASE.
+- **Hardware:**
+  - Kit FPGA com processador ARM (ex: ARM Cortex-A9 no DE1-SoC)
+  - Periféricos de vídeo (buffer de pixels e buffer de caracteres)
 
-Passos para Compilação e Execução:
+- **Software:**
+  - [Intel Quartus Prime](https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/overview.html)
+  - [Intel FPGA Monitor Program](https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/hls-debugger.html)
 
-Configuração do Projeto FPGA:
+- **Arquivo necessário:**
+  - `address_map_arm.h` (não incluído)  
+    Define os endereços dos periféricos:  
+    `PIXEL_BUF_CTRL_BASE`, `RGB_RESAMPLER_BASE`, `KEY_BASE`, `FPGA_CHAR_BASE`.
 
-Garanta que seu projeto Quartus (ou equivalente) esteja configurado com um sistema de hardware que inclua um processador ARM (HPS), controlador de buffer de pixels, controlador de buffer de caracteres e uma interface de leitura de botões (KEYs) mapeados para os endereços usados no código (address_map_arm.h).
+---
 
-Compilação do Código C:
+## ⚙️ Passos para Compilação e Execução
+
+### 1. Configurar o Projeto FPGA
+
+- Certifique-se de que seu projeto Quartus contenha:
+  - Processador ARM (HPS)
+  - Controlador de buffer de pixels
+  - Controlador de buffer de caracteres
+  - Interface de leitura de botões (KEYs)  
+    mapeados conforme definido em `address_map_arm.h`.
+
+### 2. Compilar o Código C
+
+- Crie um novo projeto C/C++
+- Inclua:
+  - Arquivos `.c`
+  - `address_map_arm.h`
+- Configure o compilador (ex: `arm-none-eabi-gcc`)
+- Compile e gere o executável (`.axf`, `.elf`, etc)
+
+### 3. Carregar e Executar no FPGA
+
+- Conecte o FPGA ao seu computador via USB
+- Use um debugger ou monitor para:
+  - Carregar o executável no ARM
+  - Iniciar a execução
+- A tela conectada ao FPGA exibirá o jogo
+
+---
+
+## 📷 Demonstração do Jogo
+
+[![Assista ao vídeo](https://img.youtube.com/vi/HuWzXzB60Ag/0.jpg)](https://youtu.be/HuWzXzB60Ag)
 
 
-Crie um novo projeto C/C++ e inclua todos os arquivos .c  necessários (especialmente este arquivo C e address_map_arm.h).
+## 📄 Licença
 
-Configure o compilador para o seu alvo ARM (por exemplo, arm-none-eabi-gcc).
+Distribuído para fins educacionais no contexto da disciplina **Sistemas Embarcados**.
 
-Compile o código-fonte. Isso gerará um arquivo executável (geralmente .axf ou .elf).
-
-Carregar e Executar no FPGA:
-
-Conecte seu kit FPGA ao computador.
-
-Use o debugger (ou sua ferramenta preferida) para carregar o arquivo executável compilado para o processador ARM do seu FPGA.
-
-Inicie a execução. O jogo deve aparecer na tela conectada ao seu FPGA.
+---
