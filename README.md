@@ -72,7 +72,8 @@ Este projeto é escrito em **C** para sistemas embarcados baseados em **FPGA**, 
 
 ---
 
-## 📷 Demonstração do Jogo
+##  Demonstração do Jogo
+Clique e assista ao vídeo!
 
 [![Assista ao vídeo](https://img.youtube.com/vi/HuWzXzB60Ag/0.jpg)](https://youtu.be/HuWzXzB60Ag)
 
