@@ -1,4 +1,10 @@
 # 🦖 Sistemas Embarcados — T-Rex VGA Game
+Projeto Final do Curso Sistemas Embarcados
+
+Departamento de Computação - UFSCar
+
+Professor Dr. Emerson Carlos Pedrino
+
 
 ### Chrome Dino Game (Versão FPGA)  
 Um clássico jogo de dinossauro adaptado para hardware FPGA.
