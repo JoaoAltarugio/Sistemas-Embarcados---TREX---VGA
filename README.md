@@ -5,6 +5,13 @@ Departamento de Computação - UFSCar
 
 Professor Dr. Emerson Carlos Pedrino
 
+## Alunos
+
+João Eduardo Batelochi Altarugio, 800815
+
+João Rafael de Freitas Guimarães, 800295
+
+Juliano Eleno Silva Pádua, 800812
 
 ### Chrome Dino Game (Versão FPGA)  
 Um clássico jogo de dinossauro adaptado para hardware FPGA.
